@@ -24,8 +24,8 @@ app.use(cookieParser());
 app.use(
     cors({
         origin: [
-            "http://localhost:5173", // 🖥️ Local dev (Vite)
-            "https://studystack-edtech.vercel.app" // 🌐 Production frontend on Vercel
+            "http://localhost:5173", // Local dev (Vite)
+            "https://studystack-edtech.vercel.app" // Production frontend on Vercel
         ],
         credentials: true,
     })
