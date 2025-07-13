@@ -80,26 +80,30 @@ The backend is implemented using **NodeJS** and **ExpressJS**, with **MongoDB** 
 
 ---
 
-## 📡 API Design
+## 🌐 API Design
 
-The StudyStack API adheres to **RESTful principles** and uses JSON for data exchange.
+The **StudyStack** platform's API is designed following the **REST architectural style**. The API is implemented using **Node.js** and **Express.js**. It uses **JSON** for data exchange and follows standard HTTP request methods such as `GET`, `POST`, `PUT`, and `DELETE`.  
 
-### 📖 API Endpoints
+### 📋 Sample List of API Endpoints and their Functionalities
 
-| Endpoint                        | Method | Description                                      |
-|----------------------------------|--------|--------------------------------------------------|
-| `/api/auth/signup`              | POST   | Create a new user account (student or instructor)|
-| `/api/auth/login`               | POST   | Authenticate user and generate JWT token         |
-| `/api/auth/verify-otp`          | POST   | Verify OTP for email confirmation                |
-| `/api/auth/forgot-password`     | POST   | Send password reset link to email                |
-| `/api/courses`                  | GET    | Fetch all available courses                      |
-| `/api/courses/:id`              | GET    | Fetch a specific course by ID                    |
-| `/api/courses`                  | POST   | Add a new course                                 |
-| `/api/courses/:id`              | PUT    | Update an existing course                        |
-| `/api/courses/:id`              | DELETE | Delete a course by ID                            |
-| `/api/courses/:id/rate`         | POST   | Add a rating (1–5) to a course                   |
+#### 🛡 Authentication APIs
+- `POST /api/auth/signup` – Create a new user (student or instructor) account.  
+- `POST /api/auth/login` – Log in using existing credentials and generate a JWT token.  
+- `POST /api/auth/verify-otp` – Verify the OTP sent to the user's registered email.  
+- `POST /api/auth/forgot-password` – Send an email with a password reset link to the registered email.  
 
 ---
+
+#### 📘 Course APIs
+- `GET /api/courses` – Get a list of all available courses.  
+- `GET /api/courses/:id` – Get details of a specific course by ID.  
+- `POST /api/courses` – Create a new course.  
+- `PUT /api/courses/:id` – Update an existing course by ID.  
+- `DELETE /api/courses/:id` – Delete a course by ID.  
+- `POST /api/courses/:id/rate` – Add a rating (out of 5) to a course.  
+
+---
+
 
 ## 🚀 Deployment
 
