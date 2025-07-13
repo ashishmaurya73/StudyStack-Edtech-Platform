@@ -42,7 +42,7 @@ const VideoDetails = () => {
 
         if (filteredVideoData.length > 0) {
           setVideoData(filteredVideoData[0])
-          console.log("filteredVideoData:", filteredVideoData);
+          // console.log("filteredVideoData:", filteredVideoData);
         }
 
         setPreviewSource(courseEntireData.thumbnail)

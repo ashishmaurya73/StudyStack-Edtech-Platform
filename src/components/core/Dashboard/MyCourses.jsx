@@ -14,11 +14,11 @@ export default function MyCourses() {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      console.log("APIII call karne ja rha hu.....")
-      console.log("🪝 Token in MyCourses:", token); 
+      // console.log("APIII call karne ja rha hu.....")
+      // console.log("Token in MyCourses:", token); 
 
       const result = await fetchInstructorCourses(token)
-      console.log("Printing INS Courses: ", result)
+      // console.log("Printing INS Courses: ", result)
       if (result) {
         setCourses(result)
       }

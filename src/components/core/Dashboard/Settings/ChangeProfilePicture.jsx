@@ -39,11 +39,11 @@ const ChangeProfilePicture = () => {
 
     const handleFileUpload =()=>{
         try{
-            console.log("uploading....")
+            // console.log("uploading....")
             setLoading(true)
             const formData=new FormData()
             formData.append("displayPicture", imageFile)
-            console.log("formData", formData)
+            // console.log("formData", formData)
             dispatch(updateDisplayPicture(token, formData)).then(()=>{
                 setLoading(false)
             })

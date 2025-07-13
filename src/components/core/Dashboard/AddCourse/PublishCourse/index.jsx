@@ -33,7 +33,7 @@ export default function PublishCourse() {
   }
 
   const handleCoursePublish = async () => {
-    console.log("handleCoursePublish call hua.")
+    // console.log("handleCoursePublish call hua.")
     // check if form has been updated or not
     if (
       (course?.status === COURSE_STATUS.PUBLISHED && getValues("public") === true) ||
