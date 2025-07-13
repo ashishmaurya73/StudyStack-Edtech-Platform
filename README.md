@@ -80,6 +80,28 @@ The backend is implemented using **NodeJS** and **ExpressJS**, with **MongoDB** 
 
 ---
 
+## ⚙️ Configuration
+
+1. **Set up a MongoDB database** and obtain the connection URL.  
+2. **Get the Mail Pass and Mail Port** from Gmail.  
+3. **Set up a Razorpay account** and obtain the **Key** and **Secret**.  
+4. **Get the JWT secret** for signing JSON Web Tokens.  
+5. **Set up a Cloudinary account** and obtain the **Cloud Name**, **API Key**, and **API Secret**.  
+
+### 📝 Create a `.env` file in the **Server** directory with the following environment variables:
+```env
+MONGODB_URL=<your-mongodb-connection-url>
+JWT_SECRET=<your-jwt-secret-key>
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=<your-mail-port>
+MAIL_USER=<your-mail-id>
+RAZORPAY_KEY=<your-razorpay-key>
+RAZORPAY_SECRET=<your-razorpay-secret>
+CLOUD_NAME=<your-cloud-name-on-cloudinary>
+API_KEY=<your-cloudinary-api-key>
+API_SECRET=<your-cloudinary-api-secret>
+```
+
 ## 🌐 API Design
 
 The **StudyStack** platform's API is designed following the **REST architectural style**. The API is implemented using **Node.js** and **Express.js**. It uses **JSON** for data exchange and follows standard HTTP request methods such as `GET`, `POST`, `PUT`, and `DELETE`.  
