@@ -1,6 +1,6 @@
 import UpdatePassword from "./UpdatePassword"
 import DeleteAccount from "./DeleteAccount"
-import ChangeProfilePicture from "./changeProfilePicture"
+import ChangeProfilePicture from "./ChangeProfilePicture"
 import EditProfile from "./EditProfile"
 
 
