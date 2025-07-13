@@ -153,7 +153,7 @@ exports.signup = async (req, res) => {
             email,
             accountType,
             contactNumber,
-            password: hashedPassword, 
+            password: hashedPassword,
             additionalDetails: ProfileDetails._id,
             image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`, // this api from dicebear is make a dp image with first letter of firstName and lastName (eg-> Ashish Maurya -> AM)
         })
@@ -212,8 +212,10 @@ exports.login = async (req, res) => {
 
             //create cookie and send response 
             const options = {
-                expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
+                expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),// 3 days
                 httpOnly: true,
+                secure: process.env.NODE_ENV === "production", // true in production (HTTPS)
+                sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // none for cross-origin, lax for dev
             }
             res.cookie("token", token, options).status(200).json({
                 success: true,

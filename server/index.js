@@ -23,25 +23,13 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = [
-    "http://localhost:5173", // Dev frontend
-    "https://studystack-edtech.vercel.app" // Production frontend
-];
-
 app.use(
     cors({
-        origin: function (origin, callback) {
-            if (!origin || allowedOrigins.includes(origin)) {
-                callback(null, true);
-            } else {
-                callback(new Error("CORS not allowed for this origin"));
-            }
-        },
-        credentials: true, // Allow cookies/auth headers
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS", // Allow all REST methods
-        allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization" // Allow custom headers
+        origin: ["https://studystack-edtech.vercel.app"], // Your Vercel frontend URL
+        credentials: true, // Allow cookies and Authorization headers
     })
 );
+
 
 app.use(
     fileUpload({
