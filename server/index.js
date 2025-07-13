@@ -14,6 +14,7 @@ const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 const contactUsRoute = require("./routes/Contact")
 
+dotenv.config()
 const PORT = process.env.PORT || 4000;
 
 // database connect
@@ -27,25 +28,20 @@ const allowedOrigins = [
     "https://studystack-edtech.vercel.app" // Production frontend
 ];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("CORS not allowed for this origin: " + origin));
-    }
-  },
-  credentials: true, // Allow cookies/auth headers
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS", // Allow REST methods
-  allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization" // Allow custom headers
-};
-
-// ✅ Apply CORS globally (MUST be before routes/middleware)
-app.use(cors(corsOptions));
-
-// ✅ Handle preflight OPTIONS requests for all routes
-app.options("*", cors(corsOptions));
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("CORS not allowed for this origin"));
+            }
+        },
+        credentials: true, // Allow cookies/auth headers
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS", // Allow all REST methods
+        allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization" // Allow custom headers
+    })
+);
 
 app.use(
     fileUpload({
