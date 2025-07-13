@@ -101,21 +101,6 @@ The StudyStack API adheres to **RESTful principles** and uses JSON for data exch
 
 ---
 
-### 📥 Sample API Requests & Responses
-
-#### `GET /api/courses`
-- **Response**: Returns a list of all courses in the database.
-
-#### `POST /api/courses`
-- **Request**:
-```json
-{
-  "title": "Full Stack Development",
-  "description": "Learn to build web applications with MERN stack",
-  "price": 1999,
-  "instructorId": "abc123"
-}
-
 ## 🚀 Deployment
 
 - **Frontend**: Deployed on [Vercel](https://vercel.com) for fast and secure delivery with global CDN support.  
@@ -135,5 +120,6 @@ The StudyStack API adheres to **RESTful principles** and uses JSON for data exch
 
 - 🛡️ **Admin Panel**: Full-featured admin management tools.  
 - 📊 **Advanced Analytics**: For instructors and admins.  
-- 📱 **Mobile App Version**: To enhance accessibility and user experience on smartphones.  
+- 📱 **Mobile App Version**: To enhance accessibility and user experience on smartphones. 
+ 
 
